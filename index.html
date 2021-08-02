@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+    body {
+        font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-weight: 200;
+        text-align: center;
+    }
+    .calculator {
+        display: flex;
+        background-color: rgb(211, 211, 211);
+        flex-direction: column;
+        width: 255px;
+    }
+    button {
+        height: 60px;
+        width: 60px;
+        font-size: 16pt;
+        flex-grow: 1;
+    }
+    #display {
+        height: 60px;
+        text-align: right;
+        flex-grow: 0 1;
+        background-color: rgba(58, 58, 58, 0.445);
+        font-size: 37pt;
+        color: white;
+        padding-right: 5px;
+    }
+</style>
+<script src="script.js" defer></script>
+<body>
+
+<div class='calculator'>
+    <div id='display'>0</div>
+    <div>
+        <button onclick="clearDisplay();">AC</button>
+        <button onclick="neg();"">+/-</button>
+        <button onclick="storeOperator('mod'); storeFirstValue();">%</button>
+        <button onclick="storeOperator('divide'); storeFirstValue();">÷</button>
+    </div>
+    <div>
+        <button onclick="updateDisplay(7);">7</button>
+        <button onclick="updateDisplay(8);">8</button>
+        <button onclick="updateDisplay(9);">9</button>
+        <button onclick="storeOperator('multiply'); storeFirstValue();">x</button>
+    </div>
+    <div>
+        <button onclick="updateDisplay(4);">4</button>
+        <button onclick="updateDisplay(5);">5</button>
+        <button onclick="updateDisplay(6);">6</button>
+        <button onclick="storeOperator('subtract'); storeFirstValue();">-</button>
+    </div>
+    <div>
+        <button onclick="updateDisplay(1);">1</button>
+        <button onclick="updateDisplay(2);">2</button>
+        <button onclick="updateDisplay(3);">3</button>
+        <button onclick="storeOperator('add'); storeFirstValue();">+</button>
+    </div>
+    <div>
+        <button onclick="updateDisplay(0);" style="width: 125px;">0</button>
+        <button onclick="updateDisplay('.')">.</button>
+        <button onclick="eval();">=</button>
+    </div>
+
+</div>
+
+</body>
+</html>
