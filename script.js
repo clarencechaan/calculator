@@ -38,7 +38,7 @@ function operate(operator, x, y) {
 const display = document.querySelector("#display");
 
 function updateDisplay(x) {
-    if (newNum) {
+    if (newNum || workingValue === 0) {
         display.textContent = x;
         workingValue = Number(display.textContent);
         newNum = false;
@@ -84,7 +84,7 @@ function storeFirstValue() {
 function eval() {
     workingValue = operate(operator, firstValue, workingValue);
     operator = '';
-    firstValue = 0;
+    // firstValue = 0;
     newNum = true;
     display.textContent = `${workingValue}`;
 }
