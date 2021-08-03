@@ -62,17 +62,7 @@ let operator, firstValue;
 let newNum = true;
 
 function storeOperator(op) {
-    if (op === 'add') {
-        operator = 'add';
-    } else if (op === 'subtract') {
-        operator = 'subtract';
-    } else if (op === 'multiply') {
-        operator = 'multiply';
-    } else if (op === 'divide') {
-        operator = 'divide';
-    } else if (op === 'mod') {
-        operator = 'mod';
-    }
+    operator = op;
     newNum = true;
 }
 
